@@ -1,0 +1,8 @@
+{
+    "files.exclude": {
+        "node.modules":true,
+        ".vscode":true,
+        "package.json":true,
+        "package-lock.json":true
+    }
+}
