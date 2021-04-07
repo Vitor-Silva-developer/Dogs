@@ -11,6 +11,7 @@ const LoginForm = () => {
 
   const handleSubmit = (event) => {
     event.preventDefault();
+    
     if (username.validateField() && password.validateField()) {
       fetch("https://dogsapi.origamid.dev/json/jwt-auth/v1/token", {
         method: "POST",
