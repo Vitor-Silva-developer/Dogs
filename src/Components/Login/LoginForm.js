@@ -10,13 +10,13 @@ const LoginForm = () => {
   const username = useForm();
   const password = useForm();
 
-  const { userLogin } = React.useContext(UserContext);
+  const { userLogin, error, loading } = React.useContext(UserContext);
 
   async function handleSubmit(event) {
     event.preventDefault();
 
     if (username.validateField() && password.validateField()) {
-      userLogin(username.value, password.value)
+      userLogin(username.value, password.value);
     }
   }
 
@@ -27,8 +27,12 @@ const LoginForm = () => {
       <form action="" onSubmit={handleSubmit}>
         <Input name="username" label="username" type="text" {...username} />
         <Input name="password" label="password" type="password" {...password} />
-
-        <Button>Entrar</Button>
+        {loading ? (
+          <Button disabled>Loading...</Button>
+        ) : (
+          <Button>Entrar</Button>
+        )}
+        {error && <p>{error}</p>}
       </form>
 
       <Link to="/login/SignUp" element={<SignUp />}>
