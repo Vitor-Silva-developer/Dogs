@@ -4,17 +4,18 @@ import SignUp from "./SignUp";
 import Button from "./formComponents/Button/Button";
 import Input from "./formComponents/Input/Input";
 import useForm from "../../Hooks/useForm";
-import Error from '../Helper/error';
+import Error from "../Helper/error";
 import { UserContext } from "../../UserContext";
 import styles from "./LoginForm.module.css";
 import stylesBtn from "../Login/formComponents/Button/Button.module.css";
+import Head from "../Helper/Head";
 
 const LoginForm = () => {
   const username = useForm();
   const password = useForm();
 
   const { userLogin, error, loading } = React.useContext(UserContext);
-  
+
   async function handleSubmit(event) {
     event.preventDefault();
 
@@ -25,6 +26,7 @@ const LoginForm = () => {
 
   return (
     <section className="animeLeft">
+      <Head title="Login" />
       <h1 className="title">Login</h1>
 
       <form className={styles.form} onSubmit={handleSubmit}>
@@ -37,14 +39,20 @@ const LoginForm = () => {
         )}
         <Error error={error} />
       </form>
-      <Link className={styles.forgot} to="/login/forgot-password">Forgot password?</Link>
+      <Link className={styles.forgot} to="/login/forgot-password">
+        Forgot password?
+      </Link>
 
       <div className={styles.register}>
-          <h2 className={styles.subtitle}>Create an Account</h2>
-          <p>Doesn't have an account? Sign up!</p>
-          <Link className={stylesBtn.button} to="/login/SignUp" element={<SignUp />}>
-            Create an Account
-          </Link>
+        <h2 className={styles.subtitle}>Create an Account</h2>
+        <p>Doesn't have an account? Sign up!</p>
+        <Link
+          className={stylesBtn.button}
+          to="/login/SignUp"
+          element={<SignUp />}
+        >
+          Create an Account
+        </Link>
       </div>
     </section>
   );

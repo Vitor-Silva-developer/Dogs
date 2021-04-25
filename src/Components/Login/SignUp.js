@@ -6,6 +6,7 @@ import { USER_POST } from "../../Api/api";
 import { UserContext } from "../../UserContext";
 import useFetch from "../../Hooks/useFetch";
 import Error from "../Helper/error";
+import Head from "../Helper/Head";
 
 const SignUp = () => {
   const username = useForm();
@@ -28,6 +29,7 @@ const SignUp = () => {
 
   return (
     <section className="animeLeft">
+      <Head title="sign up" />
       <h1 className={`title`}>Sign up</h1>
       <form onSubmit={handleSubmit}>
         <Input label="Username" type="text" name="username" {...username} />
