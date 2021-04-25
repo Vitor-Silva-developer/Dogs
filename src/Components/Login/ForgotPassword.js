@@ -28,7 +28,7 @@ const ForgotPassword = () => {
   return (
     <section>
       <Head title="Lost password" />
-      <h1 className="title">Forgot you password?</h1>
+      <h1 className="title">Forgot your password?</h1>
       {data ? (
         <p style={{ color: "#4c1" }}>{data}</p>
       ) : (
