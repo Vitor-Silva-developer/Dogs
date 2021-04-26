@@ -32,6 +32,8 @@
 
 This project was developed during a course, it's basically a instagram clone, but for dogs. In this project i've learned a lot of things like: how to create and use react components, react-router, context api, Hooks, and more.
 
+### have a look on the website here: [dogs](https://dogs-social-media.netlify.app)
+
 ### Developed With
 
 - [Javascript](https://jquery.com)
